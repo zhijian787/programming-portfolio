@@ -15,7 +15,7 @@ from undead import Undead
 
 bone_rune = Rune("Bone", 10)
 
-skeleton = Undead("Bones", "Skeleton", 100, 20)
+skeleton = Undead("U001", "Bones", "Skeleton", 100, 20)
 
 print(skeleton)
 
@@ -43,15 +43,30 @@ print(bone_rune)
 skeleton = necromancer.summon_undead(
     bone_rune,
     5,
+    "U001",
     "Bones",
     "Skeleton",
     100,
     20
 )
-
 print(bone_rune)
 print(skeleton)
 print(necromancer)
 
 for undead in necromancer.undead_army:
     print(undead)
+
+print(len(necromancer.undead_army))
+
+# necromancer.remove_undead(skeleton)
+
+
+
+# print(len(necromancer.undead_army))
+
+
+print(len(necromancer.undead_army))
+
+print(necromancer.remove_undead_by_id("U001"))
+
+print(len(necromancer.undead_army))

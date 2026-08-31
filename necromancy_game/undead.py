@@ -1,10 +1,15 @@
 class Undead:
-    def __init__(self, name, undead_type, health, attack_power):
+    def __init__(self, undead_id, name, undead_type, health, attack_power):
+        self.__undead_id = undead_id
         self.__name = name
         self.__undead_type = undead_type
         self.__health = health
         self.__attack_power = attack_power
         self.__is_alive = True
+
+    @property
+    def undead_id(self):
+        return self.__undead_id
 
     @property
     def name(self):
