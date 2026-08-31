@@ -1,5 +1,7 @@
 from client import Client
 from account import Account
+from transaction import Transaction
+from branch import Branch
 client1 = Client("C001", "zhijianhuang", "a1979239@adelaide.edu.au")
 print(client1.name)
 print(client1.contact)
@@ -37,3 +39,35 @@ print(account2.balance)
 print(account2.account_type)
 account2.change_account_type("Business")
 print(account2.account_type)
+transaction1 = Transaction("T001", "Deposit", 500, "Test transaction")
+print(transaction1.status)
+print(transaction1.status)
+transaction1.update_status()
+print(transaction1.status)
+transaction1.cancel_transaction()
+print(transaction1.status)
+transaction2 = Transaction("T002", "Withdrawal", 200, "Test transaction 2")
+print(transaction2.status)
+
+transaction2.cancel_transaction()
+
+print(transaction2.status)
+print(transaction2.description)
+
+transaction2.update_description("Updated transaction description")
+
+print(transaction2.description)
+
+branch1 = Branch("B001", "Adelaide Branch", "Adelaide CBD", "0800000000")
+
+print(branch1.is_open)
+
+branch1.open_branch()
+print(branch1.is_open)
+
+branch1.close_branch()
+print(branch1.is_open)
+
+print(branch1.phone_number)
+branch1.update_phone_number("0811111111")
+print(branch1.phone_number)
