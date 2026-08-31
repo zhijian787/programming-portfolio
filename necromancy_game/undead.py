@@ -48,6 +48,11 @@ class Undead:
             return self.__attack_power
         return 0
 
+    def level_up(self):
+        if self.__is_alive:
+            self.__health += 20
+            self.__attack_power += 5
+
     def __str__(self):
         return (
             f"{self.name} ({self.undead_type}) - "

@@ -97,3 +97,10 @@ u4 = test_necromancer.summon_undead(
 print(len(test_necromancer.undead_army))
 print(u4)
 print(test_rune.amount)
+
+
+print(u1)
+
+print(test_necromancer.level_undead_by_id("U001"))
+
+print(u1)

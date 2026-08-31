@@ -47,6 +47,15 @@ class Necromancer:
                 return undead
         return None
 
+    def level_undead_by_id(self, undead_id):
+        undead = self.__find_undead(undead_id)
+
+        if undead is not None:
+            undead.level_up()
+            return True
+
+        return False
+
     def summon_undead(self, rune, cost, undead_id, name, undead_type, health, attack_power):
         if len(self.__undead_army) >= self.__MAX_UNDEAD:
             return None
