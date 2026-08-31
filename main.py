@@ -86,3 +86,26 @@ print(account1.balance)
 
 account1.withdraw(-300)
 print(account1.balance)
+client1.add_account(account1)
+client1.add_account(account2)
+
+print(len(client1.accounts))
+
+for account in client1.accounts:
+    print(account)
+
+client1.remove_account(account2)
+
+print(len(client1.accounts))
+
+branch1.add_client(client1)
+branch1.add_client(client2)
+
+print(len(branch1.clients))
+
+for client in branch1.clients:
+    print(client)
+
+branch1.remove_client(client2)
+
+print(len(branch1.clients))
