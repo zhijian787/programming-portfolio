@@ -12,3 +12,6 @@ class Account:
             self.balance -= amount
         else:
             print("Insufficient funds")
+
+    def change_account_type(self, new_account_type):
+        self.account_type = new_account_type
