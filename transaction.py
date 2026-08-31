@@ -16,3 +16,9 @@ class Transaction:
 
     def update_description(self, new_description):
         self.description = new_description
+
+    def __str__(self):
+        return f"Transaction {self.transaction_identifier}: {self.transaction_type}, Amount: ${self.amount}, Status: {self.status}"
+
+    def __repr__(self):
+        return f"Transaction('{self.transaction_identifier}', '{self.transaction_type}', {self.amount}, '{self.description}', '{self.status}')"

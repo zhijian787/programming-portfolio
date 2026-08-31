@@ -14,3 +14,9 @@ class Branch:
 
     def update_phone_number(self, new_phone_number):
         self.phone_number = new_phone_number
+
+    def __str__(self):
+        return f"Branch {self.branch_number}: {self.branch_name}, {self.location}, Open: {self.is_open}"
+
+    def __repr__(self):
+        return f"Branch('{self.branch_number}', '{self.branch_name}', '{self.location}', '{self.phone_number}', {self.is_open})"
