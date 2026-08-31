@@ -2,10 +2,11 @@ from undead import Undead
 
 
 class Necromancer:
-    def __init__(self, name):
+    def __init__(self, name, MAX_UNDEAD = 3):
         self.__name = name
         self.__runes = []
         self.__undead_army = []
+        self.__MAX_UNDEAD = MAX_UNDEAD
 
     @property
     def name(self):
@@ -19,11 +20,18 @@ class Necromancer:
     def undead_army(self):
         return self.__undead_army
 
+    @property
+    def MAX_UNDEAD(self):
+        return self.__MAX_UNDEAD
+
     def add_rune(self, rune):
         self.__runes.append(rune)
 
     def add_undead(self, undead):
-        self.__undead_army.append(undead)
+        if len(self.__undead_army) < self.__MAX_UNDEAD:
+            self.__undead_army.append(undead)
+            return True
+        return False
 
     def remove_undead_by_id(self, undead_id):
         undead = self.__find_undead(undead_id)
@@ -40,6 +48,8 @@ class Necromancer:
         return None
 
     def summon_undead(self, rune, cost, undead_id, name, undead_type, health, attack_power):
+        if len(self.__undead_army) >= self.__MAX_UNDEAD:
+            return None
         if rune.consume(cost):
             undead = Undead(undead_id, name, undead_type, health, attack_power)
             self.__undead_army.append(undead)

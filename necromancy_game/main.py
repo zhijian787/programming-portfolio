@@ -70,3 +70,30 @@ print(len(necromancer.undead_army))
 print(necromancer.remove_undead_by_id("U001"))
 
 print(len(necromancer.undead_army))
+
+
+
+test_rune = Rune("Bone", 100)
+test_necromancer = Necromancer("Test")
+
+test_necromancer.add_rune(test_rune)
+
+u1 = test_necromancer.summon_undead(
+    test_rune, 5, "U001", "Skeleton 1", "Skeleton", 100, 20
+)
+
+u2 = test_necromancer.summon_undead(
+    test_rune, 5, "U002", "Skeleton 2", "Skeleton", 100, 20
+)
+
+u3 = test_necromancer.summon_undead(
+    test_rune, 5, "U003", "Skeleton 3", "Skeleton", 100, 20
+)
+
+u4 = test_necromancer.summon_undead(
+    test_rune, 5, "U004", "Skeleton 4", "Skeleton", 100, 20
+)
+
+print(len(test_necromancer.undead_army))
+print(u4)
+print(test_rune.amount)
